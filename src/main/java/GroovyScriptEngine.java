@@ -23,7 +23,7 @@ public class GroovyScriptEngine {
                     new BufferedInputStream(
                         new SequenceInputStream(
 //                        		cl.getResourceAsStream("ClientConfig.groovy"),
-                              new FileInputStream("src/main/java/ClientConfig.groovy"),
+                              new FileInputStream("src/main/java/Base.groovy"),
                         		cl.getResourceAsStream("test.dsl")
 //                              new FileInputStream("target/classes/test.dsl")
                               ))));

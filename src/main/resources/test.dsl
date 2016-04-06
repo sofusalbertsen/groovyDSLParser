@@ -1,9 +1,6 @@
-parser="JsonPath"
+//parser="JsonPath"
 
-entity.to.bu{
-id   '$.id'
-timestamp   "now"	
-url   "dr.dk"
+entity {
+    id '$.id'
+    timestamp(new Date().toShortDateString())
 }
-println parser
-entity.printout()
