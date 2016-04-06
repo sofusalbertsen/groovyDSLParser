@@ -1,14 +1,10 @@
-// Listing 3.3 Java Application code that invokes the Groovy DSL
+import groovy.lang.GroovyShell;
+import org.codehaus.groovy.control.CompilerConfiguration;
 
-
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.io.SequenceInputStream;
-import java.util.List;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
+import java.io.*;
+import java.util.List;
 
 public class GroovyScriptEngine {
     public static void main(String[] args) throws Exception {
@@ -16,23 +12,14 @@ public class GroovyScriptEngine {
         ScriptEngine engine = factory.getEngineByName("groovy");
         ClassLoader cl = GroovyScriptEngine.class.getClassLoader();
         System.out.println(cl.getResource("test.dsl").getFile());
-       
-        
-        List<?> orders =
-                (List<?>)engine.eval(new InputStreamReader(
-                    new BufferedInputStream(
-                        new SequenceInputStream(
-//                        		cl.getResourceAsStream("ClientConfig.groovy"),
-                              new FileInputStream("src/main/java/Base.groovy"),
-                        		cl.getResourceAsStream("test.dsl")
-//                              new FileInputStream("target/classes/test.dsl")
-                              ))));
-//                              new FileInputStream("src/ch3/ClientOrder.groovy"),
-//                              new FileInputStream("src/order.dsl")))));
 
-//        System.out.println(orders.size());
-//        for(Object o : orders) {
-//            System.out.println(o);
-//        }
+        // Prepare shell
+        CompilerConfiguration config = new CompilerConfiguration();
+        config.setScriptBaseClass("Base");
+        GroovyShell shell = new GroovyShell(config);
+
+        // Run script
+        File myFile = new File(cl.getResource("test.dsl").getFile());
+        Object result = shell.evaluate(myFile);
     }
 }

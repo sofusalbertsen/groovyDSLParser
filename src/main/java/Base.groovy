@@ -1,10 +1,10 @@
+public abstract class Base extends Script {
+	List<Entity> entities = new ArrayList<Entity>();
 
-public class Base {
-	List<Entity> entities = []
-
-	def entity(Closure myClosure){
-		def myConfig = new Entity()
-		executeInContext(myClosure, myConfig)
-		entities.add(myConfig)
+	Entity entity(Closure myClosure){
+		Entity myConfig = new Entity();
+		ContextHelper.executeInContext(myClosure, myConfig);
+		entities.add(myConfig);
+		return myConfig
 	}
 }
