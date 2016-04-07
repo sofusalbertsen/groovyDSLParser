@@ -13,6 +13,17 @@
 	    <artifactId>groovy-all</artifactId>
 	    <version>2.4.3</version>
         </dependency>
+                       <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.3.1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>  
+        <groupId>dk.itu</groupId>
+  <artifactId>tracy</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
     </dependencies>
     <build>
     <plugins>
@@ -35,6 +46,7 @@
             <artifactId>groovy-eclipse-batch</artifactId>
             <version>2.3.7-01</version>
           </dependency>
+ 
         </dependencies>
       </plugin>
     </plugins>

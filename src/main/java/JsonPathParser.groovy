@@ -1,12 +1,27 @@
+import com.jayway.jsonpath.Configuration
+import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.JsonPath;
+
+import dk.itu.tracy.parser.GsonConfig;
+
 class JsonPathParser implements Parser{
+	DocumentContext dc;
 
     //Dummy implementation, return your JSON values here.
     @Override
-    Object eval(String key) {
-        if(key == null) return "NAN"
-        if(key.contains('id')) return 4
-        if(key.contains('author')) return "sofus albertsen"
-        if(key.contains('contributors')) return ["thierry lacour", "john doe"]
-        return "some value"
+    String eval(String key) {
+		println dc.read(key,String.class)
+      dc.read(key,String.class)
     }
+	
+    public <T> T eval(String key, String clazz) {
+    	dc.read(key,Class.forName(clazz))
+    }
+
+	void setup(String input) {
+		Configuration.setDefaults(new GsonConfig());
+		dc = JsonPath.parse(input);
+	}
+
+
 }

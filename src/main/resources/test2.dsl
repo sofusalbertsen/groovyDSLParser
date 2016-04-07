@@ -2,13 +2,10 @@ parser('JSON')
 
 def myEntity = entity {
     id = eval('$.id')
-    prev = eval('$.displayName') 
-    timestamp = new Date()
-    
+    authors = eval('$.displayName') + ", " + eval('$.contributors[*]').join(", ")
     data = retrieveData()
+    timestamp = new Date()
 }
-
-
 
 output(myEntity)
 

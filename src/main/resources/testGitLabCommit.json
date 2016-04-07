@@ -1,0 +1,46 @@
+{
+  "id": "b9dedf94faf7c2df08ee5359e7793de99149dba9",
+  "prev": ["PROJ-5"],
+  "url": "http://localhost/root/john/commit/b9dedf94faf7c2df08ee5359e7793de99149dba9",
+  "type": "code-commit",
+  "timestamp": "2016-02-17T16:13:04+00:00",
+  "data": {
+    "object_kind": "push",
+    "before": "c9457a2efb86f0d4983b00cbeded1226385ebfa6",
+    "after": "b9dedf94faf7c2df08ee5359e7793de99149dba9",
+    "ref": "refs/heads/master",
+    "checkout_sha": "b9dedf94faf7c2df08ee5359e7793de99149dba9",
+    "message": null,
+    "user_id": 1,
+    "user_name": "Administrator",
+    "user_email": "admin@example.com",
+    "project_id": 1,
+    "repository": {
+      "name": "john",
+      "url": "git@gitlab.example.com:root/john.git",
+      "description": "",
+      "homepage": "http://gitlab.example.com/root/john",
+      "git_http_url": "http://gitlab.example.com/root/john.git",
+      "git_ssh_url": "git@gitlab.example.com:root/john.git",
+      "visibility_level": 10
+    },
+    "commits": [
+      {
+        "id": "b9dedf94faf7c2df08ee5359e7793de99149dba9",
+        "message": "test",
+        "timestamp": "2016-02-16T12:34:36+00:00",
+        "url": "http://gitlab.example.com/root/john/commit/b9dedf94faf7c2df08ee5359e7793de99149dba9",
+        "author": {
+          "name": "Administrator",
+          "email": "admin@example.com"
+        },
+        "added": [],
+        "modified": [
+          "README.md"
+        ],
+        "removed": []
+      }
+    ],
+    "total_commits_count": 1
+  }
+}

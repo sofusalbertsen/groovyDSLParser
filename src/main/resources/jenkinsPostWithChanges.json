@@ -1,0 +1,104 @@
+{
+  "actions": [
+    {
+      "causes": [
+        {
+          "shortDescription": "Started by user anonymous",
+          "userId": null,
+          "userName": "anonymous"
+        }
+      ]
+    },
+    {
+      "buildsByBranchName": {
+        "refs/remotes/origin/master": {
+          "buildNumber": 201,
+          "buildResult": null,
+          "marked": {
+            "SHA1": "fc81df1fe70f7a3272008278d02cfa8aa4e95b90",
+            "branch": [
+              {
+                "SHA1": "fc81df1fe70f7a3272008278d02cfa8aa4e95b90",
+                "name": "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "revision": {
+            "SHA1": "fc81df1fe70f7a3272008278d02cfa8aa4e95b90",
+            "branch": [
+              {
+                "SHA1": "fc81df1fe70f7a3272008278d02cfa8aa4e95b90",
+                "name": "refs/remotes/origin/master"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision": {
+        "SHA1": "fc81df1fe70f7a3272008278d02cfa8aa4e95b90",
+        "branch": [
+          {
+            "SHA1": "fc81df1fe70f7a3272008278d02cfa8aa4e95b90",
+            "name": "refs/remotes/origin/master"
+          }
+        ]
+      },
+      "remoteUrls": [
+        "http://172.17.0.1/root/john.git"
+      ],
+      "scmName": ""
+    },
+    {},
+    {}
+  ],
+  "artifacts": [],
+  "building": true,
+  "description": null,
+  "displayName": "#201",
+  "duration": 0,
+  "estimatedDuration": 7956,
+  "executor": {},
+  "fullDisplayName": "Test-job #201",
+  "id": "201",
+  "keepLog": false,
+  "number": 201,
+  "queueId": 120,
+  "result": null,
+  "timestamp": 1458479882954,
+  "url": "http://172.17.0.1:8080/job/Test-job/201/",
+  "builtOn": "",
+  "changeSet": {
+    "items": [
+      {
+        "affectedPaths": [
+          "README.md"
+        ],
+        "commitId": "fc81df1fe70f7a3272008278d02cfa8aa4e95b90",
+        "timestamp": 1458479857000,
+        "author": {
+          "absoluteUrl": "http://172.17.0.1:8080/user/sofusalbertsen",
+          "fullName": "sofusalbertsen"
+        },
+        "comment": "test",
+        "date": "2016-03-20 14:17:37 +0100",
+        "id": "fc81df1fe70f7a3272008278d02cfa8aa4e95b90",
+        "msg": "test",
+        "paths": [
+          {
+            "editType": "edit",
+            "file": "README.md"
+          }
+        ]
+      }
+    ],
+    "kind": "git"
+  },
+  "culprits": [
+    {
+      "absoluteUrl": "http://172.17.0.1:8080/user/sofusalbertsen",
+      "fullName": "sofusalbertsen"
+    }
+  ],
+  "mavenArtifacts": null,
+  "mavenVersionUsed": "3.3.9"
+}

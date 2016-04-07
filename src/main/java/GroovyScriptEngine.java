@@ -12,7 +12,7 @@ public class GroovyScriptEngine {
 
         // Run script
         ClassLoader cl = GroovyScriptEngine.class.getClassLoader();
-        File myFile = new File(cl.getResource("test.dsl").getFile());
+        File myFile = new File(cl.getResource("jenkins.dsl").getFile());
         Object result = shell.evaluate(myFile);
     }
 }
