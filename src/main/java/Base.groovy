@@ -1,12 +1,13 @@
+import java.awt.im.InputContext;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public abstract class Base extends Script {
 	List<Entity> entities = new ArrayList<Entity>();
     Parser parser
-	String input;
+	
     ClassLoader cl = Base.class.getClassLoader();
-	String fileContents = new File(cl.getResource('jenkinsPostWithChanges.json').getFile()).getText('UTF-8')
+	String fileContents;
 	
     Entity entity(Closure myClosure){
 		Entity myConfig = new Entity();
@@ -16,6 +17,7 @@ public abstract class Base extends Script {
 		return myConfig
 	}
 	def String getAll(){
+		//TODO: get the file content in another way
 		fileContents
 	}
     def eval(String key){
@@ -24,7 +26,10 @@ public abstract class Base extends Script {
 	def eval(String key,String returntype){
 		return parser.eval(key,returntype)
 	}
-
+	void input(String filename){
+		println filename
+		fileContents = new File(cl.getResource(filename).getFile()).getText('UTF-8')
+	}
     void parser(String name){
         if(name.equalsIgnoreCase('json')){
             parser = new JsonPathParser()

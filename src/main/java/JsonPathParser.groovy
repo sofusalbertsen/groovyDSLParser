@@ -10,11 +10,12 @@ class JsonPathParser implements Parser{
     //Dummy implementation, return your JSON values here.
     @Override
     String eval(String key) {
-		println dc.read(key,String.class)
+		println key
       dc.read(key,String.class)
     }
 	
     public <T> T eval(String key, String clazz) {
+		println key
     	dc.read(key,Class.forName(clazz))
     }
 

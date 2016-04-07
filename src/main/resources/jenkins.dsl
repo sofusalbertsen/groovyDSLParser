@@ -1,6 +1,6 @@
-parser('JSON')
-
-def myEntity = entity {
+input 'jenkinsPostWithChanges.json'
+parser 'JSON'
+entity {
     id = eval('$.id')
     prev = eval('$.changeSet.items[*].id','java.util.List')
     url = eval('$.url')
@@ -8,9 +8,5 @@ def myEntity = entity {
     data = all
     timestamp = new Date(eval('$.timestamp', 'java.lang.Long'))
 }
-//iff(eval('$.building'),'false',)
-//list.each {
-//	println it
-//}
 
 

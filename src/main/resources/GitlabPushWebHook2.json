@@ -1,0 +1,69 @@
+{
+  "object_kind": "push",
+  "before": "18d13791760b3f5d5579fe2d2e37e8a7753380b4",
+  "after": "b4363fd684931d7a40ad8bd01f3f2f60c98f40a9",
+  "ref": "refs/heads/master",
+  "checkout_sha": "b4363fd684931d7a40ad8bd01f3f2f60c98f40a9",
+  "message": null,
+  "user_id": 1,
+  "user_name": "Administrator",
+  "user_email": "admin@example.com",
+  "project_id": 1,
+  "repository": {
+    "name": "john",
+    "url": "git@gitlab.example.com:root/john.git",
+    "description": "",
+    "homepage": "http://gitlab.example.com/root/john",
+    "git_http_url": "http://gitlab.example.com/root/john.git",
+    "git_ssh_url": "git@gitlab.example.com:root/john.git",
+    "visibility_level": 20
+  },
+  "commits": [
+    {
+      "id": "b4363fd684931d7a40ad8bd01f3f2f60c98f40a9",
+      "message": "less than half is pretty much nothing3\n",
+      "timestamp": "2016-03-21T12:11:43+01:00",
+      "url": "http://gitlab.example.com/root/john/commit/b4363fd684931d7a40ad8bd01f3f2f60c98f40a9",
+      "author": {
+        "name": "sofus",
+        "email": "sofusalbertsen@gmail.com"
+      },
+      "added": [],
+      "modified": [
+        "README.md"
+      ],
+      "removed": []
+    },
+    {
+      "id": "b124ffcf43fbb50977726e6ef4c94e681f34b563",
+      "message": "less than half is pretty much nothing2\n",
+      "timestamp": "2016-03-21T12:07:51+01:00",
+      "url": "http://gitlab.example.com/root/john/commit/b124ffcf43fbb50977726e6ef4c94e681f34b563",
+      "author": {
+        "name": "sofus",
+        "email": "sofusalbertsen@gmail.com"
+      },
+      "added": [],
+      "modified": [
+        "README.md"
+      ],
+      "removed": []
+    },
+    {
+      "id": "18d13791760b3f5d5579fe2d2e37e8a7753380b4",
+      "message": "less than half is pretty much nothing\n",
+      "timestamp": "2016-03-21T11:58:17+01:00",
+      "url": "http://gitlab.example.com/root/john/commit/18d13791760b3f5d5579fe2d2e37e8a7753380b4",
+      "author": {
+        "name": "sofus",
+        "email": "sofusalbertsen@gmail.com"
+      },
+      "added": [],
+      "modified": [
+        "README.md"
+      ],
+      "removed": []
+    }
+  ],
+  "total_commits_count": 3
+}

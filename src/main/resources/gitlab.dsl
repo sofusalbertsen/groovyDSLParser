@@ -1,14 +1,28 @@
-parser('JSON')
+input 'GitlabPushWebHook2.json'
+parser 'JSON'
 
-def myEntity = entity {
-    id = eval('$.id')
-    prev = eval('$.changeSet.items[*].id','java.util.List') 
-    url = eval('$.url')
-    type = 'Jenkins build started'
+entity {
+    id = eval('$.before')+eval('$.after')
+    prev = "" 
+    url = eval('$.repository.homepage')
+    type = eval('$.object_kind')
     data = all
-    timestamp = new Date(eval('$.timestamp', 'java.lang.Long'))
+    timestamp = new Date()
+}
+list = eval('$.commits[*].id','java.util.List')
+println list
+list.each {
+	println it
+}
+//$.commits[?(@.id=="b4363fd684931d7a40ad8bd01f3f2f60c98f40a9")]
+list.each {
+entity {
+    id = eval('$.before')+eval('$.after')
+    prev = "" 
+    url = eval('$.repository.homepage')
+    type = eval('$.object_kind')
+    data = all
+    timestamp = eval('$.commits[?(@.id=='+it+')].timestamp','java.util.Date')
+}
 }
 
-//list.each {
-//	println it
-//}
