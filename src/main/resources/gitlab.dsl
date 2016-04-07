@@ -1,6 +1,6 @@
 input 'GitlabPushWebHook2.json'
 parser 'JSON'
-
+println eval('$.user_id','long')
 entity {
     id = eval('$.before')+eval('$.after')
     prev = "" 
@@ -9,20 +9,18 @@ entity {
     data = all
     timestamp = new Date()
 }
-list = eval('$.commits[*].id','java.util.List')
-println list
-list.each {
-	println it
-}
-//$.commits[?(@.id=="b4363fd684931d7a40ad8bd01f3f2f60c98f40a9")]
-list.each {
+list = eval '$.commits[*].id','List'
+list.eachWithIndex { val, idx ->
 entity {
-    id = eval('$.before')+eval('$.after')
+    id = eval('$.commits['+idx+'].id')
     prev = "" 
-    url = eval('$.repository.homepage')
-    type = eval('$.object_kind')
+    url = eval('$.commits['+idx+'].url')
+    type = 'commit'
     data = all
-    timestamp = eval('$.commits[?(@.id=='+it+')].timestamp','java.util.Date')
+    timestamp = parseDate(eval('$.commits['+idx+'].timestamp'),"yyyy-MM-dd'T'HH:mm:ssX")
 }
 }
+def file1 = new File('groovy1.txt')
+
+file1.write(gson.toJson(entities))
 

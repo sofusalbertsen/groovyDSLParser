@@ -1,3 +1,9 @@
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import com.google.gson.JsonObject;
 import com.jayway.jsonpath.Configuration
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
@@ -10,12 +16,12 @@ class JsonPathParser implements Parser{
     //Dummy implementation, return your JSON values here.
     @Override
     String eval(String key) {
-		println key
+//		println key
       dc.read(key,String.class)
     }
 	
     public <T> T eval(String key, String clazz) {
-		println key
+//		println key
     	dc.read(key,Class.forName(clazz))
     }
 
@@ -23,6 +29,6 @@ class JsonPathParser implements Parser{
 		Configuration.setDefaults(new GsonConfig());
 		dc = JsonPath.parse(input);
 	}
-
+	
 
 }
