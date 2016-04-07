@@ -1,5 +1,6 @@
 input 'GitlabPushWebHook2.json'
 parser 'JSON'
+AMQP('AMQP.properties')
 println eval('$.user_id','long')
 entity {
     id = eval('$.before')+eval('$.after')
@@ -23,4 +24,5 @@ entity {
 def file1 = new File('groovy1.txt')
 
 file1.write(gson.toJson(entities))
+send()
 

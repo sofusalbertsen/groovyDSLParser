@@ -1,18 +1,21 @@
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonObject
-import com.google.gson.JsonParser;
+import com.google.gson.JsonParser
+
 
 import java.awt.im.InputContext;
 import java.text.DateFormat
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Date
+import java.util.Properties
+
 
 
 public abstract class Base extends Script {
 	Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat("yyyy-MM-dd'T'HH:mm:ssX").create();
-	List<Entity> entities = new ArrayList<Entity>()
+	public List<Entity> entities = new ArrayList<Entity>()
     Parser parser
     ClassLoader cl = Base.class.getClassLoader()
 	String fileContents

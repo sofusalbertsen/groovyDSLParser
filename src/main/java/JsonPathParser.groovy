@@ -8,7 +8,6 @@ import com.jayway.jsonpath.Configuration
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 
-import dk.itu.tracy.parser.GsonConfig;
 
 class JsonPathParser implements Parser{
 	DocumentContext dc;
